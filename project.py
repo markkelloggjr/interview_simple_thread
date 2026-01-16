@@ -101,14 +101,13 @@ class SetOfProjects():
             value_to_add = 0
             for history in histories_to_pick_from_to_reimburse:
                 # Could optimize here and throw out the lists if no longer in bounds, but the lists are so small its not worth it
-                value_to_add = 0
                 new_value = history._get_reimbursement_value(active_status)
                 if new_value >= value_to_add: # this is a shortcut to pick the HIGH city if on the same as a LOW city
                     value_to_add = new_value
 
             total += value_to_add
-
         return total
+    
 
     def _get_date_range(self):
         # find the earliest date and the latest date in our histories
@@ -127,3 +126,4 @@ class SetOfProjects():
     def calculate_reimbursement(self):
         date_range = self._get_date_range()
         return self._build_reimbursement_value(date_range[0], date_range[1])
+
