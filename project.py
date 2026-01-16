@@ -1,10 +1,5 @@
 from datetime import datetime, timedelta
 
-class HistoryDateAndValue():
-    def __init__(self, date):
-        self.date
-        self.reimbursement = None
-
 class CityHistory():
     DATE_FORMAT = "%m/%d/%y"
 
